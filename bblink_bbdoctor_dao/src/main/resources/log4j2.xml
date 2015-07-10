@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+	<appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{MM-dd HH:mm:ss} [%thread] %-5level %logger{25} - %msg %ex{6} %n" />
+		</Console>
+
+	</appenders>
+
+	<loggers>
+		<logger name="org.springframework" level="debug" />
+		<logger name="org.springframework.beans.factory" level="info" />
+		<logger name="org.apache.commons" level="info" />
+		<logger name="cn.bblink" level="debug" />
+
+		<root level="debug">
+			<appender-ref ref="console" />
+			<appender-ref ref="RollingFile" />
+		</root>
+	</loggers>
+
+</configuration>

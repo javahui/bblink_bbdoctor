@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="doctor">
+
+	<select id="manageList" parameterType="hashmap" resultType="hashmap">
+		SELECT 
+			id,
+			unique_code as uniqueCode,
+			avatar,
+			real_name as realName,
+			hos_name as hosName,
+			hos_room as hosRoom,
+			introduce,
+			mobile,
+			title,
+			qr_code as qrCode,
+			is_finish as is_finish,
+			create_user_id as  createUserId,
+			update_user_id as updateUserId,
+			update_time as updateTime,
+			create_time as createTime
+		FROM doctor
+		WHERE 1=1
+		<if test="realName != null" > and real_name LIKE concat('%', #{realName}, '%')</if>
+		order by id desc
+	</select>
+	<select id="manageListCount" parameterType="hashmap" resultType="Long">
+		SELECT count(1) FROM doctor WHERE 1=1
+		<if test="realName != null" > and real_name LIKE concat('%', #{realName}, '%')</if>
+	</select>
+	
+	<select id="list" parameterType="hashmap" resultType="cn.bblink.bbdoctor.domain.po.Doctor">
+		SELECT 
+			id,
+			unique_code as uniqueCode,
+			avatar,
+			real_name as realName,
+			hos_name as hosName,
+			hos_room as hosRoom,
+			introduce,
+			mobile,
+			title,
+			qr_code as qrCode
+		FROM doctor
+		WHERE 1=1
+		order by id desc
+	</select>
+	
+	<select id="byId" parameterType="Long" resultType="cn.bblink.bbdoctor.domain.po.Doctor">
+		SELECT 
+			id,
+			unique_code as uniqueCode,
+			avatar,
+			real_name as realName,
+			hos_name as hosName,
+			hos_room as hosRoom,
+			introduce,
+			mobile,
+			title,
+			qr_code as qrCode,
+			is_finish as is_finish,
+			create_user_id as  createUserId,
+			update_user_id as updateUserId,
+			update_time as updateTime,
+			create_time as createTime
+		FROM doctor
+		WHERE id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="cn.bblink.bbdoctor.domain.po.Doctor" useGeneratedKeys="true" keyProperty="id">
+		insert into doctor(
+			unique_code,
+			avatar,
+			real_name,
+			hos_name,
+			hos_room,
+			introduce,
+			mobile,
+			title,
+			qr_code,
+			is_finish,
+			create_user_id,
+			update_user_id,
+			update_time,
+			create_time
+		)
+		values(
+			#{uniqueCode},
+			#{avatar},
+			#{realName},
+			#{hosName},
+			#{hosRoom},
+			#{introduce},
+			#{mobile},
+			#{title},
+			#{qrCode},
+			#{isFinish},
+			#{createUserId},
+			#{updateUserId},
+			#{updateTime},
+			#{createTime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="cn.bblink.bbdoctor.domain.po.Doctor">
+		UPDATE 
+			doctor 
+		SET
+			unique_code = #{uniqueCode},
+			avatar = #{avatar},
+			real_name = #{realName},
+			hos_room = #{hosRoom},
+			introduce = #{introduce},
+			mobile = #{mobile},
+			introduce = #{introduce},
+			title = #{title},
+			qr_code = #{qrCode},
+			is_finish = #{isFinish}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="Long">
+		DELETE FROM doctor WHERE id = #{id}
+	</delete>
+</mapper>

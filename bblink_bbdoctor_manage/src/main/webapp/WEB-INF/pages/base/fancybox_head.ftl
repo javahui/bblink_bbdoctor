@@ -1,0 +1,2 @@
+<link rel="stylesheet" href="${rc.contextPath }/js/fancybox/style/style.css" type="text/css" />
+<link rel="stylesheet" href="${rc.contextPath }/js/fancybox/style/jquery.fancybox-1.3.1.css" type="text/css" />

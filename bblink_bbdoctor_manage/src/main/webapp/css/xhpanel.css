@@ -1,0 +1,36 @@
+
+/* ------------------------------------------------------------
+  Pro: xhPanel
+  Create: 2013-12-02
+  Update: 2013-12-02
+------------------------------------------------------------ */
+
+/* common */
+
+
+body{min-width:1000px;}
+
+
+.xbox-form{background:#f9fafb;border:1px solid #dbe7ef; padding:15px 15px 5px;}
+.xbox-form label{margin-bottom:10px;}
+.xhform label.checkbox,.xhform label.radio{margin-bottom:10px;}
+
+.xhtitle{background:#4e8ad4;color:#fff;height:40px;line-height:40px;border:1px solid #407fcc;padding: 0 10px;}
+.xhtitle-outer{height:40px;}
+.xhtitle a{color:#fff;}
+.xhtitle a:hover{color:#fff;}
+.xhtitle h4{font-size:14px;fong-weight:bold;display:inline-block;display:*inline;*zoom:1;}
+.linkitem{display:inline-block;margin-left:10px;}
+.xhtitle h4 small{display:inline-block;margin-left:10px;font-size:12px;font-weight:normal;}
+
+.xhlistbox{}
+.xhlist tr,.xhlist td{border:1px solid #ccd1dd;}
+.xhlist thead td{background:#f9fafb;text-align:center;font-weight:bold;padding:2px 10px;border:none;}
+.xhlist tbody td{padding:5px 10px;}
+.xhlist .lefttitle{padding:0;background:#dce6f3;}
+.xhlist tbody .xhname{width:130px;padding:5px 0;text-align:center;}
+
+.xhsitem{width:22%;}
+.textitem{white-space: nowrap;}
+
+

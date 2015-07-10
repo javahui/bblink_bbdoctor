@@ -1,0 +1,2 @@
+<script type="text/javascript" src="${rc.contextPath }/js/fancybox/js/jquery.mousewheel-3.0.2.pack.js"></script>
+<script type="text/javascript" src="${rc.contextPath }/js/fancybox/js/jquery.fancybox-1.3.1.js"></script>
